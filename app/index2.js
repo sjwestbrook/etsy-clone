@@ -1,0 +1,13 @@
+require('./app.js');
+require('./app.routes.js');
+require('./components/admin.js');
+require('./components/authenticate.js');
+require('./components/checkout.js');
+require('./components/home.js');
+require('./components/product.js');
+require('./components/profile.js');
+require('./components/shop.js');
+require('./shared/OrderService.js');
+require('./shared/ProductService.js');
+require('./shared/ShopService.js');
+require('./shared/UserService.js');

@@ -1,0 +1,34 @@
+<!-- home.html -->
+<div class="page-header text-center">
+  <h1>Top Products</h1>
+</div>
+
+<div class="row">
+
+  <!-- loop over home.products here -->
+  <div class="col-sm-4" ng-repeat="product in home.products">
+    <div class="product-box">
+
+      <!-- We’re attaching ui-srefs to the image and to the title so users can click through to see the product. ui-router will then route us to the appropriate page. -->
+
+      <!-- the product image -->
+      <a class="product-img" ui-sref="product({ id: product.instance.id, name: product.instance.name })">
+        <!-- show the product picture if it exists (checking with ng-show) and if there is no product picture, then we’ll just use a picture of a majestic bear -->
+        <img ng-src="{{ product.instance.pictures[0].photo }}" ng-show="product.instance.pictures">
+
+        <img src="http://placebear.com/g/250/170" ng-show="!product.instance.pictures">
+      </a>
+
+      <!-- the product content like title -->
+      <div class="product-content">
+        <a ui-sref="product({ id: product.instance.id, name: product.instance.name })">
+          {{ product.instance.name }}
+        </a>
+        <div class="listing-price">
+          {{ product.instance.price | currency }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
